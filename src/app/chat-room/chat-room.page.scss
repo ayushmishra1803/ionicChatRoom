@@ -1,0 +1,92 @@
+ion-content {
+  --background: black;
+  width: 100%;
+  height: 100%;
+}
+.toolBarDiv {
+  width: 100%;
+  height: 7%;
+  background-color: rgb(59, 59, 59);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  .toolBarimg {
+    margin-right: 2%;
+    width: 10%;
+  }
+  .toolbarHeading {
+    color: cadetblue;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.mainChatDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .chatMessages {
+
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+
+    .otheruserMessaged {
+      align-items: flex-start;
+      width: 80%;
+      color: white;
+      span{
+        width: 100%;
+        display: flex;
+        justify-content: flex-s;
+        top: 10%;
+        color: white;
+        position: absolute;
+        float: left;
+      }
+    }
+    .ourUserMessaged {
+      color: white;
+      align-items: flex-end;
+      width: 80%;
+      span{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        top: 10%;
+        color: white;
+        position: absolute;
+      }
+    }
+
+  }
+  .chatMessageInput {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+
+    ion-item {
+      margin: 0px !important;
+      padding: 0px !important;
+      --background: black;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .inputBar {
+        background-color: rgb(189, 185, 180);
+        width: 100%;
+        border-radius: 10px;
+      }
+      .ion-icon {
+        font-size: 50px;
+        margin-left: 1%;
+      }
+    }
+  }
+}
