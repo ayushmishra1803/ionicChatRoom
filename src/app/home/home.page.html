@@ -1,20 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="upperDiv">
+    <section class="headingSection">
+      <ion-img src="/assets/images/CHAT.png" class="img"></ion-img>
+      <section>
+        <section class="imgHeading">
+          <span> Lets Chat... </span>
+        </section>
+      </section>
+    </section>
+  </div>
+  <div class="cardDiv">
+    <ion-card class="card">
+      <div class="cardHeadingDiv">
+        <span>Nobody likes anonymous messages!!!</span>
+      </div>
+      <!-- <div class="nameHeadingDiv">
+        <span>Enter Your Name</span>
+      </div> -->
+      <div class="inputDiv">
+        <ion-item lines="full">
+          <ion-label position="floating" style="color: antiquewhite"
+            >Enter your Name</ion-label
+          >
+          <ion-input class="inputBar" [(ngModel)]="UserName"></ion-input>
+        </ion-item>
+      </div>
+      <!-- <div class="hrLineDiv">
+        <hr class="hrLine">
+      </div> -->
+      <div class="buttonDiv">
+        <ion-button color="primary" [disabled]="UserName === '' " >Chat Now...</ion-button>
+      </div>
+    </ion-card>
   </div>
 </ion-content>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chatapp-7de37": {
+      "hosting": {
+        "app": [
+          "chatapp-7de37"
+        ]
+      }
+    }
+  }
+}
