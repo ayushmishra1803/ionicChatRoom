@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserDataServiceService } from '../Service/UserDataService/user-data-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
   UserName = '';
-  constructor() {}
+  constructor(
+    private userData: UserDataServiceService,
+    private Router: Router
+  ) {}
   ngOnInit(): void {}
+  onSubmit() {
+    this.userData.setUserData(this.UserName);
+    this.Router.navigate(['/chat-room'], { replaceUrl: true });
+  }
 }
