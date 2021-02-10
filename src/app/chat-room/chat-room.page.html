@@ -1,25 +1,52 @@
 <ion-content>
-  <div class="toolBarDiv">
-    <section class="toolbarHeading">
-      <ion-img src="assets/images/CHAT.png" class="toolBarimg"></ion-img>
-      <span>Chat Room</span>
-    </section>
-  </div>
-  <div class="mainChatDiv">
-    <section class="chatMessages">
-      <div *ngFor="let chatMessages of chats">
-        <section [class]="chatMessages.name === user? 'ourUserMessaged': 'otheruserMessaged'">
-         <span style="color: white;"> {{chatMessages.message}} </span>
-        </section>
+  <div class="mainDiv">
+    <div class="toolBarDiv">
+      <section class="toolbarHeading">
+        <ion-img src="assets/images/CHAT.png" class="toolBarimg"></ion-img>
+        <span>Chat Room</span>
+      </section>
+    </div>
+    <div class="mainChatDiv">
+      <section class="chatMessages">
+        <div *ngFor="let chatMessages of chats">
+          <section
+            [class]="chatMessages.name === user? 'ourUserMessaged': 'otheruserMessaged'"
+          >
+            <ion-avatar
+              *ngIf="chatMessages.name != user"
+              style="margin-right: 4px"
+            >
+              <ion-img src="assets/images/user.jfif"></ion-img
+            ></ion-avatar>
+            <span style="color: white"> {{chatMessages.message}} </span>
+            <section>
+              <ion-avatar
+                *ngIf="chatMessages.name === user"
+                style="margin-left: 4px"
+              >
+                <ion-img src="assets/images/user.jfif"></ion-img
+              ></ion-avatar>
+            </section>
+          </section>
+        </div>
+      </section>
+      <section class="chatMessageInput">
+        <ion-item>
+          <ion-input
+            class="inputBar"
+            placeholder="Message...."
+            [(ngModel)]="message"
+          ></ion-input>
 
-      </div>
-    </section>
-    <section class="chatMessageInput">
-      <ion-item>
-        <ion-input class="inputBar" placeholder="Message...."></ion-input>
-
-          <ion-icon name="chevron-forward-circle" color="primary" class="ion-icon"> </ion-icon>
-      </ion-item>
-    </section>
+          <ion-icon
+            name="chevron-forward-circle"
+            color="primary"
+            class="ion-icon"
+            (click)="submit()"
+          >
+          </ion-icon>
+        </ion-item>
+      </section>
+    </div>
   </div>
 </ion-content>
