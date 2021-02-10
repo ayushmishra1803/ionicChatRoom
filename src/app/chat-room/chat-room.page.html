@@ -12,21 +12,51 @@
           <section
             [class]="chatMessages.name === user? 'ourUserMessaged': 'otheruserMessaged'"
           >
-            <ion-avatar
+            <!-- <ion-avatar
               *ngIf="chatMessages.name != user"
               style="margin-right: 4px"
             >
               <ion-img src="assets/images/user.jfif"></ion-img
-            ></ion-avatar>
-            <span style="color: white"> {{chatMessages.message}} </span>
-            <section>
+            ></ion-avatar> -->
+
+            <span
+              >{{chatMessages.name}}<br />
+              {{chatMessages.message}}
+            </span>
+            <!-- <section>
               <ion-avatar
                 *ngIf="chatMessages.name === user"
                 style="margin-left: 4px"
               >
                 <ion-img src="assets/images/user.jfif"></ion-img
               ></ion-avatar>
-            </section>
+            </section> -->
+          </section>
+          <section
+            *ngIf="chatMessages.name === user"
+            style="
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+              margin-right: 5%;
+            "
+          >
+            <p style="color: white">
+              {{chatMessages.Date * 1000 | date:'h:mm:ss'}}<br />
+            </p>
+          </section>
+          <section
+            *ngIf="chatMessages.name != user"
+            style="
+              width: 100%;
+              display: flex;
+              justify-content: flex-start;
+              margin-left: 5%;
+            "
+          >
+            <p style="color: white">
+              {{chatMessages.Date * 1000 | date:'h:mm:ss'}}<br />
+            </p>
           </section>
         </div>
       </section>
